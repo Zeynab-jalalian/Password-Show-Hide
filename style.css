@@ -1,5 +1,68 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(201, 40, 201);
+}
+
+.container {
+  background: #fff;
+  position: relative;
+  max-width: 340px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.container .input-box {
+  position: relative;
+  height: 50px;
+}
+.input-box input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 0 35px 0 15px;
+  transition: 0.2s ease;
+}
+.input-box input:is(:focus, :valid) {
+  border-color: purple;
+}
+.input-box :is(label, i) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  transition: 0.2s ease;
+}
+.input-box label {
+  left: 15px;
+  pointer-events: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+.input-box input:is(:focus, :valid) ~ label {
+  color: purple;
+  top: 0;
+  font-size: 12px;
+  font-weight: 500;
+  background: #fff;
+}
+.input-box i {
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.input-box input:is(:focus, :valid) ~ i {
+  color: purple;
 }
